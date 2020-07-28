@@ -53,4 +53,10 @@ export const GlobalStyle = createGlobalStyle`
         background: var(--blackLighter); 
         border-radius: 1.5px;
     }
+
+    #root {
+        min-height: calc(100vh - var(--bodyPaddingTop)) ;
+        display: flex;
+        flex-direction: column;
+    }
 `
