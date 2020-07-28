@@ -1,5 +1,5 @@
 import React from 'react';
-import { FooterBase } from './styles';
+import { FooterBase } from './styled';
 
 function Footer() {
   return (

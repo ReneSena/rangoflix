@@ -26,7 +26,7 @@ const Button = styled.button`
         left: 0;
         right: 0;
         bottom: 0;
-        background: var(--primary);
+        background: var(--red);
         border-radius: 0;
         border: 0;
         text-align: center;
