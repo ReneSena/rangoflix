@@ -1,5 +1,5 @@
 import React from 'react';
-import { VideoCardGroupContainer, Title, ExtraLink } from './styles';
+import { VideoCardGroupContainer, Title } from './styles';
 import VideoCard from './components/VideoCard';
 import SliderWrapper from '../Slider';
 
@@ -11,7 +11,7 @@ function VideoCardGroup({
 }) {
   const categoryTitle = category.titulo;
   const categoryColor = category.cor;
-  const categoryExtraLink = category.link_extra;
+  // const categoryExtraLink = category.link_extra;
   const videos = category.videos;
   
   return (

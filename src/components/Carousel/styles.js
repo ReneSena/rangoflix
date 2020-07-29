@@ -12,8 +12,8 @@ export const Title = styled.h3`
 	border-radius: 4px;
 
 	@media (max-width: 800px) {
-		font-size: 18px;
-		padding: 10px;
+		font-size: 24px;
+		padding: 0 0 10px 0;
 	}
 `;
 
@@ -51,11 +51,14 @@ export const VideoCardList = styled.ul`
 export const VideoCardGroupContainer = styled.section`
 	color: var(--white);
 	min-height: 197px;
-	/* margin-left: 4%;
-	margin-right: 4%; */
 	padding: 20px 40px;
 	background-color: ${props => props.background || ''};
 
+	@media (max-width: 800px) {
+		padding: 20px 10px;
+		min-height: 165px;
+	}
+	
 	&:not(:last-of-type) {
 		margin-bottom: 16px;
 	}

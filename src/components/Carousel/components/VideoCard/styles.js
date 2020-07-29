@@ -15,15 +15,15 @@ export const VideoCardContainer = styled.a`
 	position: relative;
 	display: flex;
 	align-items: flex-end;
-	/* padding: 16px; */
 	transition: all .3s;
-	/* border: 10px solid #000;			 */
-	/* box-shadow: 0 0 0 1px var(--white);
-	transform: scale(0.98); */
+
+	@media (max-width: 800px) {
+		width: 200px;
+		height: 100px;
+	}
 
 	&:hover,
 	&:focus {
-		/* opacity: .8; */
 		transform: scale(0.98);
 		box-shadow: 0 0 0 1px var(--white);
 		outline: none;
@@ -50,5 +50,9 @@ export const VideoCardContainer = styled.a`
 	&:focus .description {
 		transform: translateY(0);
 		opacity: 1;
+
+		@media (max-width: 800px) {
+			display: none;
+		}
 	}
 `;

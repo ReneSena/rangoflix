@@ -29,6 +29,10 @@ export const Container = styled.div`
 
         &:hover {
             background: rgba(0,0,0,0.5);
+
+            @media(max-width: 600px) {
+                background-color: transparent;
+            }
         }
     }
 
@@ -40,6 +44,10 @@ export const Container = styled.div`
         
         &:hover {
             background: rgba(0,0,0,0.5);
+
+            @media(max-width: 600px) {
+                background-color: transparent;
+            }
         }
     }
 `;

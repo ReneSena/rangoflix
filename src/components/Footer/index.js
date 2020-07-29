@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FooterBase } from './styled';
 
 import Logo from '../../assets/Img/Logo.png';
@@ -6,9 +7,9 @@ import Logo from '../../assets/Img/Logo.png';
 function Footer() {
   return (
     <FooterBase>
-      <a href="#">
+      <Link to="/">
         <img src={Logo} width="150" alt="Logo do RangoFlix" />
-      </a>
+      </Link>
       <p>
         Orgulhosamente criado durante a
         {' '}

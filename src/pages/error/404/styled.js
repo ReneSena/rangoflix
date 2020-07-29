@@ -1,18 +1,33 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Img from '../../../assets/Img/404.jpg';
-import Template from '../../../components/Template';
+import ImgMobile from '../../../assets/Img/404-mobile.jpg';
 
 export const BackgroundWrapper = styled.div`
     width: 100%;
     height: 100vh;
-    /* background-attachment: fixed; */
-    background-image: linear-gradient(250deg, rgba(7,7,7,.1), rgba(07,07,07,.8)), url(${Img});
+    background-image: 
+        linear-gradient(
+            250deg, 
+            rgba(7,7,7,.1), 
+            rgba(07,07,07,.8)), 
+            url(${Img}
+        );
     background-size: cover;
     background-position: center;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
+
+    @media (max-width: 800px) {
+        background-image: 
+        linear-gradient(
+            250deg, 
+            rgba(7,7,7,.1), 
+            rgba(07,07,07,.8)), 
+            url(${ImgMobile}
+        );
+    }
 `
 
 export const ContainerMessage = styled.div`
