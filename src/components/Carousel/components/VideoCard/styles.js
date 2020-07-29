@@ -15,17 +15,40 @@ export const VideoCardContainer = styled.a`
 	position: relative;
 	display: flex;
 	align-items: flex-end;
-	padding: 16px;
+	/* padding: 16px; */
 	transition: all .3s;
-	
+	/* border: 10px solid #000;			 */
+	/* box-shadow: 0 0 0 1px var(--white);
+	transform: scale(0.98); */
+
 	&:hover,
 	&:focus {
-		opacity: .4;
+		/* opacity: .8; */
 		transform: scale(0.98);
 		box-shadow: 0 0 0 1px var(--white);
+		outline: none;
 	}
 
 	&:not(:first-child) {
 		margin-left: 20px;
+	}
+
+	.description {
+		background: rgba(0, 0, 0, .8);
+		width: 100%;
+		height: 60px;
+		color: var(--white);
+		display: flex;
+		align-items: center;
+		padding: 10px;
+		transform: translateY(60px);
+		transition: transform linear 200ms;
+		opacity: 0;
+	}
+
+	&:hover .description,
+	&:focus .description {
+		transform: translateY(0);
+		opacity: 1;
 	}
 `;

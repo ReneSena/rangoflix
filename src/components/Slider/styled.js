@@ -25,14 +25,22 @@ export const Container = styled.div`
         left: 0;
         top: -5px;
         height: 165px;
-        background: rgba(0,0,0,0.5);
+        transition: background linear 200ms;
+
+        &:hover {
+            background: rgba(0,0,0,0.5);
+        }
     }
 
     .slick-next {
         top: -5px;
         right: 0;
         height: 165px;
-        background: rgba(0,0,0,0.5);
+        transition: background linear 200ms;
+        
+        &:hover {
+            background: rgba(0,0,0,0.5);
+        }
     }
 `;
 
