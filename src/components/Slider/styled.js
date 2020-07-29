@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { KeyboardArrowLeft } from '@styled-icons/material-twotone/KeyboardArrowLeft';
+import { KeyboardArrowRight } from '@styled-icons/material-twotone/KeyboardArrowRight';
 
 export const Container = styled.div`
     padding: 0;
@@ -10,20 +12,27 @@ export const Container = styled.div`
         top: 0;
         bottom: 0;
         margin: auto;
-        width: 30px;
-        height: 30px;
+        width: 60px;
+        height: 60px;
         transform: initial;
-        
+
         &:before {
-            font-size: 30px;
+            font-size: 60px;
         }
     }
 
     .slick-prev {
         left: 0;
+        top: -5px;
+        height: 165px;
+        background: rgba(0,0,0,0.5);
     }
+
     .slick-next {
-        right: 16px;
+        top: -5px;
+        right: 0;
+        height: 165px;
+        background: rgba(0,0,0,0.5);
     }
 `;
 
@@ -37,3 +46,19 @@ export const SliderItem = styled.div`
         object-fit: cover;
     }
 `;
+
+export const ArrowLeft = styled(KeyboardArrowLeft)`
+    color: var(--white);
+
+    &:hover {
+        color: var(--white);
+    }
+`
+
+export const ArrowRight = styled(KeyboardArrowRight)`
+    color: var(--white);
+
+    &:hover {
+        color: var(--white);
+    }
+`
