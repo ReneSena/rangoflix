@@ -34,13 +34,11 @@ const CadastroCategoria = () => {
   useEffect(() => {
     // O que a gente quer que aconteça
     const URL_VALUE = window.location.hostname.includes('localhost')
-      ? 'http://localhost:8080/categorias' :
-      'https://rangoflix.herokuapp.com/';
+      ? 'http://localhost:8080/categorias' : 'https://rangoflix.herokuapp.com/categorias';
 
     fetch(URL_VALUE)
       .then(async (res) => {
         const responseReq = await res.json();
-        // console.log(listCategorys)
         setListCategorys([
           ...responseReq,
         ]);
@@ -86,14 +84,6 @@ const CadastroCategoria = () => {
 
         <ButtonSave type="submit">Cadastrar</ButtonSave>
       </Form>
-
-      {/* <ul>
-        {listCategorys.map((category) => {
-          return (
-            <li key={category.nome}>{category.cor}</li>
-          );
-        })}
-      </ul> */}
 
       {listCategorys.length === 0 && (
         <div>Loading...</div>
