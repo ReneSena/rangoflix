@@ -23,7 +23,6 @@ export const Container = styled.div`
 
     .slick-prev {
         left: 0;
-        top: -5px;
         height: 165px;
         transition: background linear 200ms;
 
@@ -37,7 +36,6 @@ export const Container = styled.div`
     }
 
     .slick-next {
-        top: -5px;
         right: 0;
         height: 165px;
         transition: background linear 200ms;

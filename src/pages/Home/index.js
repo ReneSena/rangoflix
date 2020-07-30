@@ -7,7 +7,7 @@ import Footer from '../../components/Footer';
 
 const Home = () => {
     return (
-        <div style={{ background: "#444" }}>
+        <>
             <Menu />
 
             <BannerMain
@@ -34,7 +34,7 @@ const Home = () => {
             />           
 
             <Footer />
-        </div>
+        </>
     );
 }
 

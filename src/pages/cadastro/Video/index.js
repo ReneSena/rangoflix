@@ -7,7 +7,7 @@ const CadastroVideo = () => (
     <Template>
         <h1>Cadastro de vídeo</h1>
         
-        <Link to="/">Home</Link>
+        <Link to="/cadastro/categoria">Cadastro de Categorias</Link>
     </Template>
 );
 

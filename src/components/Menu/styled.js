@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const AvatarWrapper = styled.img`
-
     max-width: 168px;
 
     @media (max-width: 800px) {
@@ -26,7 +25,7 @@ export const MenuWrapper = styled.nav`
     padding-right: 5%;
 
     background: var(--black);
-    border-bottom: 2px solid var(--red);
+    border-bottom: 2px solid var(--white);
 
     @media (max-width: 800px) {
         height: 40px;
