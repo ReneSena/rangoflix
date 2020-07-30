@@ -1,0 +1,16 @@
+{
+    "categorias": [
+        {
+            "id": 1,
+            "name": "Cozinha Árabe",
+            "description": "Comidas exoticas do mundo árabe",
+            "color": "#FF0000"
+        },
+        {
+            "id": 2,
+            "name": "Cozinha Mexicana",
+            "description": "Comidas apimentadas típicas",
+            "color": "#FF0000"
+        }
+    ]
+}
