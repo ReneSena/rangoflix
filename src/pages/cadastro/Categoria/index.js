@@ -33,9 +33,11 @@ const CadastroCategoria = () => {
 
   useEffect(() => {
     // O que a gente quer que aconteça
-    const urlValue = 'http://localhost:8080/categorias';
+    const URL_VALUE = window.location.hostname.includes('localhost')
+      ? 'http://localhost:8080/categorias' :
+      'https://rangoflix.herokuapp.com/';
 
-    fetch(urlValue)
+    fetch(URL_VALUE)
       .then(async (res) => {
         const responseReq = await res.json();
         // console.log(listCategorys)
