@@ -3,10 +3,11 @@ import styled from 'styled-components';
 export const FieldWrapper = styled.div`
     position: relative;
     margin-bottom: 20px;
+    width: 100%;
 
-    &:last-of-type {
+    /* &:last-of-type {
         margin-bottom: 40px;
-    }
+    } */
 
     .description-label {
         transition: all 200ms linear;
@@ -20,7 +21,7 @@ export const Label = styled.label`
     top: 50%;
     left: 20px;
     color: var(--black);
-    transform: translateY(-50%);
+    transform: scale(1) translateY(-50%);
 `
 
 export const Field = styled.input`
@@ -34,14 +35,14 @@ export const Field = styled.input`
     &:focus,
     &:valid {
         background-color: #f3f3f3;
-        border: 2px solid #27ec83;
+        /* border: 2px solid #27ec83; */
     }
 
     &:focus + .description-label,
     &:valid + .description-label {
         left: 20px;
-        font-size: 12px;
-        transform: translateY(-100%);        
+        /* font-size: 12px; */
+        transform: scale(0.9) translateY(-100%);        
     }
 ` 
 
@@ -62,8 +63,8 @@ export const FieldArea = styled.textarea`
     &:focus + .description-label,
     &:valid + .description-label {
         left: 20px;
-        font-size: 12px;
-        transform: translateY(-100%);        
+        /* font-size: 12px; */
+        transform: scale(0.9) translateY(-100%);        
     }
 
     & + .description-label {
@@ -73,6 +74,6 @@ export const FieldArea = styled.textarea`
         top: 20%;
         left: 20px;
         color: var(--black);
-        transform: translateY(-20%);
+        transform: scale(1) translateY(-20%);
     }
-`;
+`

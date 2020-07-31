@@ -17,7 +17,7 @@ const FormField = ({
           value={value}
           onChange={onChange}
           required
-          rows="5"
+          rows="4"
           cols="30"
         />
       )

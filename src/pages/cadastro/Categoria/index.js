@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Template from '../../../components/Template';
 import FormField from '../../../components/FormField';
+import Loader from '../../../components/Loader';
 
 import {
-  Title, Form, ButtonSave, Table, ContainerWrapper,
+  Title, Form, ButtonSave, Table, ContainerWrapper, ButtonDelete, ButtonUpdate,
 } from './styled';
 
 const CadastroCategoria = () => {
@@ -73,18 +74,27 @@ const CadastroCategoria = () => {
 
   return (
     <Template styled={{ textAlign: 'center' }}>
-      <Title>Nova Categoria</Title>
 
       <ContainerWrapper>
         <Form onSubmit={handleSubmit}>
-          <FormField
-            label="Nome"
-            type="text"
-            name="name"
-            value={values.name}
-            onChange={handleChange}
-          />
+            <Title as="legend">Nova Categoria</Title>
+            
+            <FormField
+              label="Nome"
+              type="text"
+              name="name"
+              value={values.name}
+              onChange={handleChange}
+            />
 
+            <FormField
+              label="Color"
+              type="color"
+              name="color"
+              value={values.color}
+              onChange={handleChange}
+            />
+          
           <FormField
             label="Descrição"
             type="textarea"
@@ -93,19 +103,12 @@ const CadastroCategoria = () => {
             onChange={handleChange}
           />
 
-          <FormField
-            label="Color"
-            type="color"
-            name="color"
-            value={values.color}
-            onChange={handleChange}
-          />
 
           <ButtonSave type="submit">Cadastrar</ButtonSave>
         </Form>
 
         {listCategorys.length === 0 && (
-          <div>Loading...</div>
+          <Loader />
         )}
 
         {listCategorys.length > 0
@@ -122,14 +125,17 @@ const CadastroCategoria = () => {
                   <tbody>
                     {listCategorys.map((category, index) => (
                       // eslint-disable-next-line react/no-array-index-key
-                      <tr key={index} id={category.id}>
+                      <tr key={index}>
                         <td>{category.name}</td>
                         <td>{category.description}</td>
                         <td>{category.color}</td>
                         <td>
-                          <button type="button">
+                          <ButtonUpdate type="button">
+                            Editar
+                          </ButtonUpdate>
+                          <ButtonDelete type="button">
                             Excluir
-                          </button>
+                          </ButtonDelete>
                         </td>
                       </tr>
                     ))}
