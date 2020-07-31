@@ -1,8 +1,14 @@
 import styled from 'styled-components';
 
+export const ContainerWrapper = styled.div`
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+`
+
 export const Form = styled.form`
-    width: 500px;
-    margin: auto;
+    width: 30%;
+    /* margin: auto; */
 
     @media (max-width: 800px) {
         width: 100%;
@@ -36,9 +42,10 @@ export const ButtonSave = styled.button`
 `
 
 export const Table = styled.table`
-    width: 500px;
-    margin: 20px auto;
-    border-spacing: 0;
+    width: 40%;
+    margin-left: 30px;
+    border-collapse: separate;
+    border-spacing: 0 5px;
 
     @media (max-width: 800px) {
         width: 100%;
@@ -46,8 +53,18 @@ export const Table = styled.table`
     }
 
     th, tr, td {
-        border: 1px solid #fff;
+        /* border: 1px solid #fff; */
         padding: 10px 20px;
-        text-align: center;
+        text-align: left;
+    }
+
+    tr, td {
+        color: #000;
+        background-color: #ddd;
+        border-bottom: 1px solid #fff;
+    }
+
+    tr {
+        margin-bottom: 10px;
     }
 `

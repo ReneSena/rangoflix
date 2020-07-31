@@ -56,7 +56,7 @@ export const FieldArea = styled.textarea`
     &:focus,
     &:valid {
         background-color: #f3f3f3;
-        border: 2px solid #27ec83;
+        /* border: 2px solid #27ec83; */
     }
 
     &:focus + .description-label,

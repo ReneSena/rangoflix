@@ -11,7 +11,7 @@ function Footer() {
         <img src={Logo} width="150" alt="Logo do RangoFlix" />
       </Link>
       <p>
-        Orgulhosamente criado durante a
+        Site feito na
         {' '}
         <a href="https://www.alura.com.br/">
           Imersão React da Alura
