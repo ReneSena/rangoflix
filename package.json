@@ -17,10 +17,10 @@
     "styled-icons": "^10.13.0"
   },
   "scripts": {
-    "server": "node ./server.js", //lendo o arquivo server
+    "server": "node ./server.js",
     "dev": "concurrently \"react-scripts start\" \"yarn run server\"", 
-    "start": "yarn run server", //heroku 
-    "build": "react-scripts build", //vercel
+    "start": "yarn run server",
+    "build": "react-scripts build", 
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
