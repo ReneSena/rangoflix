@@ -113,7 +113,7 @@ const CadastroCategoria = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            marginTop: '40px',
+            margin: '40px 0',
           }}
           >
             <Loader />
