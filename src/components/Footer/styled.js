@@ -11,7 +11,7 @@ export const FooterBase = styled.footer`
   text-align: center;
 
   p {
-    margin-bottom: 0;
+    margin-top: 10px;
   }
 
   @media (max-width: 800px) {

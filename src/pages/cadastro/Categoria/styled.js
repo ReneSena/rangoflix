@@ -1,17 +1,19 @@
 import styled from 'styled-components';
 import { Trash } from '@styled-icons/boxicons-solid/Trash';
 import { Edit } from '@styled-icons/evaicons-solid/Edit';
+import { ButtonSuccess } from '../../../components/Button';
+
 
 export const ContainerWrapper = styled.div`
-    display: flex;
+    /* display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-top: 20px;
+    margin-top: 20px; */
 `
 
 export const Form = styled.form`
-    width: 40%;
-    /* margin: auto; */
+    width: 50%;
+    margin: auto;
 
     @media (max-width: 800px) {
         width: 100%;
@@ -22,26 +24,8 @@ export const Form = styled.form`
 export const Title = styled.h1`
     font-size: 36px;
     text-align: center;
-`
-export const ButtonSave = styled.button`
-    padding: 0 20px;
-    border: 0;
-    border-radius: 5px;
-    height: 40px;
-    font-size: 14px;
-    font-weight: 600;
-    background-color: #03a04c;
-    color: #fff;
-    cursor: pointer;
-    outline:none;
-
-    &:focus {
-        outline: none;
-    }
-
-    &:hover {
-        opacity: 0.8;
-    }
+    margin-bottom: 30px;
+    margin-top: 30px;
 `
 
 export const ScrollTable = styled.div`
@@ -57,13 +41,17 @@ export const Table = styled.table`
     font-size: 14px;
     border-collapse: separate;
     border-spacing: 0 5px;
-    /* margin-left: auto; */
-    /* margin-right: auto; */
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 20px;
 
     @media (max-width: 800px) {
         width: 100%;
         padding: 0 20px;
+    }
+
+    th {
+        font-weight: 600;
     }
 
     th, tr, td {
@@ -72,24 +60,35 @@ export const Table = styled.table`
     }
 
     tr:not(:first-of-type), td {
-        color: #000;
-        background-color: #f3f3f3;
-        border-bottom: 1px solid #fff;
+        color: #E5E5E5;
+        background-color: #53585D;
+        border-bottom: 1px solid var(--white);
     }
 
     tr:hover td {
-        background-color: #fff;
+        background-color: #484d51;
+    }
+
+    tr td:first-child {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+
+    }
+
+    tr td:last-child {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px; 
     }
 `
 
 export const ButtonDelete = styled(Trash)`
-    color: var(--red);
+    color: #E5E5E5;
     width: 24px;
     cursor: pointer;
 `
 
 export const ButtonUpdate = styled(Edit)`
-    color: var(--primary);
+    color: #E5E5E5;
     width: 24px;
     margin-right: 10px;
     cursor: pointer;

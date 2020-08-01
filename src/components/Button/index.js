@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-const Button = styled.button`
+export const Button = styled.button`
     color: var(--white);
-    border: 2px solid var(--white);
+    border: 0;
     box-sizing: border-box;
     cursor: pointer;
-    padding: 16px 24px;
+    padding: 10px 20px;
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -14,11 +14,11 @@ const Button = styled.button`
     text-decoration: none;
     display: inline-block;
     background: var(--red);
-    transition: opacity .3s;
+    transition: all .3s;
 
     &:hover,
     &:focus {
-        opacity: .5;
+        opacity: .8;
     }
 
     @media (max-width: 800px) {
@@ -33,4 +33,15 @@ const Button = styled.button`
     }
 `;
 
-export default Button;
+export const ButtonSuccess = styled(Button)`
+    background-color: #03a04c;
+`;
+
+export const ButtonDanger = styled(Button)`
+    background-color: transparent;
+    
+    &:hover {
+        background-color: var(--primary);
+        opacity: 1;
+    }
+`;

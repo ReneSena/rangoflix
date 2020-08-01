@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Template from '../../../components/Template';
 import FormField from '../../../components/FormField';
 import Loader from '../../../components/Loader';
+import { ButtonSuccess, ButtonDanger } from '../../../components/Button';
 
 import {
-  Title, Form, ButtonSave, Table, ContainerWrapper, ButtonDelete, ButtonUpdate,
+  Title, Form, Table, ContainerWrapper, ButtonDelete, ButtonUpdate,
 } from './styled';
 
 const CadastroCategoria = () => {
@@ -53,7 +54,7 @@ const CadastroCategoria = () => {
     const URL_VALUE = window.location.hostname.includes('localhost')
       ? 'http://localhost:8080/categorias' : 'https://rangoflix.herokuapp.com/categorias';
 
-    //Valores do campos do form
+    // Valores do campos do form
     fetch(URL_VALUE, {
       method: 'POST',
       body: JSON.stringify({
@@ -67,7 +68,7 @@ const CadastroCategoria = () => {
     })
       .then(async (res) => {
         const responseFieldValues = await res.json();
-        setListCategorys([...listCategorys, responseFieldValues]); //adicionando os novos valores no state
+        setListCategorys([...listCategorys, responseFieldValues]); // adicionando os novos valores no state
         setValues(initialValues);
       });
   };
@@ -76,25 +77,17 @@ const CadastroCategoria = () => {
     <Template styled={{ textAlign: 'center' }}>
 
       <ContainerWrapper>
-        <Form onSubmit={handleSubmit}>
-            <Title as="legend">Nova Categoria</Title>
-            
-            <FormField
-              label="Nome"
-              type="text"
-              name="name"
-              value={values.name}
-              onChange={handleChange}
-            />
+        <Form onSubmit={handleSubmit} autoComplete="off">
+          <Title as="legend">Nova Categoria</Title>
 
-            <FormField
-              label="Color"
-              type="color"
-              name="color"
-              value={values.color}
-              onChange={handleChange}
-            />
-          
+          <FormField
+            label="Nome"
+            type="text"
+            name="name"
+            value={values.name}
+            onChange={handleChange}
+          />
+
           <FormField
             label="Descrição"
             type="textarea"
@@ -103,22 +96,37 @@ const CadastroCategoria = () => {
             onChange={handleChange}
           />
 
+          <FormField
+            label={`Color: ${values.color}`}
+            type="color"
+            name="color"
+            value={values.color}
+            onChange={handleChange}
+          />
 
-          <ButtonSave type="submit">Cadastrar</ButtonSave>
+          <ButtonSuccess type="submit" style={{ marginRight: '30px' }}>Cadastrar</ButtonSuccess>
+          <ButtonDanger type="button" onClick={() => setValues(initialValues)}>Limpar</ButtonDanger>
         </Form>
 
         {listCategorys.length === 0 && (
-          <Loader />
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginTop: '40px',
+          }}
+          >
+            <Loader />
+          </div>
         )}
 
         {listCategorys.length > 0
                 && (
-                <Table>
+                <Table style={{ marginTop: '30px' }}>
                   <thead>
                     <tr>
                       <th>Nome</th>
                       <th>Descrição</th>
-                      <th>Cor</th>
                       <th>Ações</th>
                     </tr>
                   </thead>
@@ -128,7 +136,6 @@ const CadastroCategoria = () => {
                       <tr key={index}>
                         <td>{category.name}</td>
                         <td>{category.description}</td>
-                        <td>{category.color}</td>
                         <td>
                           <ButtonUpdate type="button">
                             Editar

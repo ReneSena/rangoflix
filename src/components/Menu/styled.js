@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const AvatarWrapper = styled.img`
     max-width: 168px;
+    height: 30px;
 
     @media (max-width: 800px) {
         max-width: 105px;
@@ -10,7 +11,7 @@ export const AvatarWrapper = styled.img`
 
 export const MenuWrapper = styled.nav`
     width: 100%;
-    height: 94px;
+    height: 60px;
     z-index: 100;
 
     display: flex;
