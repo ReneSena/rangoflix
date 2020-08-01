@@ -113,10 +113,12 @@ const CadastroCategoria = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            flexDirection: 'column',
             margin: '40px 0',
           }}
           >
             <Loader />
+            <div style={{ fontSize: '12px', color: '#fff', marginTop: '10px' }}>Aguarde, carregando categorias...</div>
           </div>
         )}
 

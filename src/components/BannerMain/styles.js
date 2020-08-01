@@ -72,6 +72,7 @@ export const BannerMainContainer = styled.section`
   background-image: ${({ backgroundImage }) => `url(${backgroundImage})`}; 
   background-size: cover;
   background-position: center;
+
   @media (max-width: 800px) {
     height: auto;
     min-height: 50vh;
@@ -100,7 +101,7 @@ export const BannerMainContainer = styled.section`
   }
 `;
 
-export const WatchButton = styled.button`
+export const WatchButton = styled.a`
   font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
   cursor: pointer;
@@ -119,7 +120,11 @@ export const WatchButton = styled.button`
   transition: opacity .3s;
   display: none;
   margin: 0 auto;
+
   @media (max-width: 800px) {
     display: block;
+    max-width: 150px;
+    text-align: center;
+    margin: auto;
   }
 `;
