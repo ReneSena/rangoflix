@@ -19,6 +19,20 @@ const CadastroCategoria = () => {
   const [listCategorys, setListCategorys] = useState([]);
   const [values, setValues] = useState(initialValues);
 
+  useEffect(() => {
+    // O que a gente quer que aconteça
+    const URL_VALUE = window.location.hostname.includes('localhost')
+      ? 'http://localhost:8080/categorias' : 'https://rangoflix.herokuapp.com/categorias';
+
+    fetch(URL_VALUE)
+      .then(async (res) => {
+        const responseReq = await res.json();
+        setListCategorys([
+          ...responseReq,
+        ]);
+      });
+  }, []);
+
   const setValue = (chave, valor) => {
     setValues({
       ...values,
@@ -33,19 +47,6 @@ const CadastroCategoria = () => {
     );
   };
 
-  useEffect(() => {
-    // O que a gente quer que aconteça
-    const URL_VALUE = window.location.hostname.includes('localhost')
-      ? 'http://localhost:8080/categorias' : 'https://rangoflix.herokuapp.com/categorias';
-
-    fetch(URL_VALUE)
-      .then(async (res) => {
-        const responseReq = await res.json();
-        setListCategorys([
-          ...responseReq,
-        ]);
-      });
-  }, []);
   /* quando a quer que aconteça */
 
   const handleSubmit = (event) => {
@@ -70,6 +71,21 @@ const CadastroCategoria = () => {
         const responseFieldValues = await res.json();
         setListCategorys([...listCategorys, responseFieldValues]); // adicionando os novos valores no state
         setValues(initialValues);
+      });
+  };
+
+  const handleDelete = (event) => {
+    const id = event.target.getAttribute('id');
+
+    const URL_VALUE = window.location.hostname.includes('localhost')
+    ? 'http://localhost:8080/categorias' : 'https://rangoflix.herokuapp.com/categorias';
+
+    fetch(`${URL_VALUE}/${id}`, {
+      method: 'DELETE',
+    })
+      .then((response) => response.json())
+      .then((responseServer) => {
+        console.log(responseServer);
       });
   };
 
@@ -142,7 +158,7 @@ const CadastroCategoria = () => {
                           <ButtonUpdate type="button">
                             Editar
                           </ButtonUpdate>
-                          <ButtonDelete type="button">
+                          <ButtonDelete as="button" id={category.id} onClick={(event) => handleDelete(event)} type="button">
                             Excluir
                           </ButtonDelete>
                         </td>
