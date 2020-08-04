@@ -53,13 +53,10 @@ export const VideoCardGroupContainer = styled.section`
 	min-height: 197px;
 	padding: 20px 40px;
 	background-color: ${props => props.background || ''};
+	margin-bottom: 16px;
 
 	@media (max-width: 800px) {
 		padding: 20px 10px;
 		min-height: 165px;
-	}
-	
-	&:not(:last-of-type) {
-		margin-bottom: 16px;
 	}
 `;
