@@ -7,8 +7,7 @@ import useForm from '../../../hooks/useForm';
 import videosRepository from '../../../repositories/videos';
 import categoriasRepository from '../../../repositories/categorias';
 
-import {
-  Title, Form, ContainerWrapper } from '../Categoria/styled';
+import { Title, Form, ContainerWrapper } from '../Categoria/styled';
 
 const CadastroVideo = () => {
   const history = useHistory();
@@ -25,31 +24,31 @@ const CadastroVideo = () => {
       .getAll()
       .then((categoriasFromSever) => {
         setCategorias(categoriasFromSever);
-      })
+      });
   }, []);
 
   return (
     <Template styled={{ textAlign: 'center' }}>
 
       <ContainerWrapper>
-        <Form autoComplete="off" onSubmit={(event) => {
-          event.preventDefault();
+        <Form
+          autoComplete="off"
+          onSubmit={(event) => {
+            event.preventDefault();
 
-          const categoriaEscohida = categorias.find((categoria) => {
-            return categoria.titulo === values.categoria;
-          })
+            const categoriaEscohida = categorias.find((categoria) => categoria.titulo === values.categoria);
 
-          videosRepository.create({
-            titulo: values.titulo,
-            url: values.url,
-            categoriaId: categoriaEscohida.id,
-          })
-          .then(() => {
-            console.log('vídeo cadastrado!!!');
-            history.push('/');
-          });
-
-        }}>
+            videosRepository.create({
+              titulo: values.titulo,
+              url: values.url,
+              categoriaId: categoriaEscohida.id,
+            })
+              .then(() => {
+                console.log('vídeo cadastrado!!!');
+                history.push('/');
+              });
+          }}
+        >
           <Title as="legend">Novo Vídeo</Title>
 
           <FormField

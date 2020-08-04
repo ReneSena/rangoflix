@@ -50,8 +50,9 @@ export const ButtonIcon = styled(Button)`
     background-color: transparent;
     border: none;
     cursor: pointer;
+    z-index: 10;
 
     &:hover {
         opacity: .8;
     }
-`
+`;

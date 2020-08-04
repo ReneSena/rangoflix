@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 import Template from '../../../components/Template';
 import FormField from '../../../components/FormField';
 import Loader from '../../../components/Loader';
@@ -7,11 +6,10 @@ import { ButtonSuccess, ButtonDanger, ButtonIcon } from '../../../components/But
 import useForm from '../../../hooks/useForm';
 
 import {
-  Title, Form, Table, ContainerWrapper, IconDelete, IconUpdate 
+  Title, Form, Table, ContainerWrapper,
 } from './styled';
 
 const CadastroCategoria = () => {
-  const history = useHistory();
   const initialValues = {
     titulo: '',
     description: '',
@@ -22,20 +20,6 @@ const CadastroCategoria = () => {
 
   // Guarda os valores da lista de categorias
   const [listCategorys, setListCategorys] = useState([]);
-
-  useEffect(() => {
-    // O que a gente quer que aconteça
-    const URL_VALUE = window.location.hostname.includes('localhost')
-      ? 'http://localhost:8080/categorias' : 'https://rangoflix.herokuapp.com/categorias';
-
-    fetch(URL_VALUE)
-      .then(async (res) => {
-        const responseReq = await res.json();
-        setListCategorys([
-          ...responseReq,
-        ]);
-      });
-  }, []);
 
   /* quando a quer que aconteça */
 
@@ -74,10 +58,25 @@ const CadastroCategoria = () => {
       method: 'DELETE',
     })
       .then((response) => response.json())
-      .then((responseServer) => {
-          history.push('/cadastro/categoria');
+      .then(responseServer => {
+        setListCategorys(prev => prev.filter(cat => cat.id !== Number(id)));
       });
   };
+
+  useEffect(() => {
+    // O que a gente quer que aconteça
+    const URL_VALUE = window.location.hostname.includes('localhost')
+      ? 'http://localhost:8080/categorias' : 'https://rangoflix.herokuapp.com/categorias';
+
+    fetch(URL_VALUE)
+      .then(async (res) => {
+        const responseReq = await res.json();
+
+        setListCategorys([
+          ...responseReq,
+        ]);
+      });
+  }, []);
 
   return (
     <Template styled={{ textAlign: 'center' }}>
@@ -144,16 +143,15 @@ const CadastroCategoria = () => {
                       <tr key={index}>
                         <td>{category.titulo}</td>
                         <td>{category.description}</td>
-                        {/* <td style={{ display: 'flex' }}>
-                          <ButtonIcon type="button">
-                            <IconUpdate />  
-                          </ButtonIcon>
+                        <td style={{ display: 'flex' }}>
+                          {/* <ButtonIcon type="button">
+                            <IconUpdate />
+                          </ButtonIcon> */}
 
-                          <ButtonIcon id={category.id} onClick={(event) => handleDelete(event)} type="button">  
-                            <IconDelete />
+                          <ButtonIcon id={category.id} onClick={(event) => handleDelete(event)} type="button">
+                            Excluir
                           </ButtonIcon>
-                      
-                        </td> */}
+                        </td>
                       </tr>
                     ))}
                   </tbody>

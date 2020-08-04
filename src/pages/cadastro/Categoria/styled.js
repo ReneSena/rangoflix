@@ -3,13 +3,12 @@ import { Trash } from '@styled-icons/boxicons-solid/Trash';
 import { Edit } from '@styled-icons/evaicons-solid/Edit';
 import { ButtonSuccess } from '../../../components/Button';
 
-
 export const ContainerWrapper = styled.div`
     /* display: flex;
     align-items: center;
     justify-content: space-around;
     margin-top: 20px; */
-`
+`;
 
 export const Form = styled.form`
     width: 50%;
@@ -19,21 +18,21 @@ export const Form = styled.form`
         width: 100%;
         padding: 0 20px;
     }
-`
+`;
 
 export const Title = styled.h1`
     font-size: 36px;
     text-align: center;
     margin-bottom: 30px;
     margin-top: 30px;
-`
+`;
 
 export const ScrollTable = styled.div`
     width: 100%
     overflow-x: hidden;
     overflow-y: scroll;
     height: 500px;
-` 
+`;
 
 export const Table = styled.table`
     width: 60%;
@@ -79,17 +78,19 @@ export const Table = styled.table`
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px; 
     }
-`
+`;
 
-export const IconDelete = styled(Trash)`
-    color: #E5E5E5;
-    width: 24px;
-    cursor: pointer;
-`
+// export const IconDelete = styled(Trash)`
+//     color: #E5E5E5;
+//     width: 24px;
+//     cursor: pointer;
+//     z-index: 1;
+// `;
 
-export const IconUpdate = styled(Edit)`
-    color: #E5E5E5;
-    width: 24px;
-    margin-right: 10px;
-    cursor: pointer;
-`
+// export const IconUpdate = styled(Edit)`
+//     color: #E5E5E5;
+//     width: 24px;
+//     margin-right: 10px;
+//     cursor: pointer;
+//     z-index: 1;
+// `;
