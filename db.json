@@ -36,6 +36,12 @@
         "text": "Uma série de receitas para quem fazendo aquela dieta. :)",
         "url": ""
       }
+    },
+    {
+      "titulo": "cadastro",
+      "description": "dkasdksakd",
+      "cor": "#20bf6b",
+      "id": 5
     }
   ],
   "videos": [
@@ -90,15 +96,15 @@
     {
       "id": 9,
       "categoriaId": 2,
-        "titulo": "Bolo de cenoura incrível",
-        "url": "https://www.youtube.com/watch?v=MWxWgKJaWGg"
-      },
+      "titulo": "Bolo de cenoura incrível",
+      "url": "https://www.youtube.com/watch?v=MWxWgKJaWGg"
+    },
     {
       "id": 10,
       "categoriaId": 2,
-        "titulo": "Brigadeiro de colher top",
-        "url": "https://www.youtube.com/watch?v=MUTx0TiHUUI"
-      },
+      "titulo": "Brigadeiro de colher top",
+      "url": "https://www.youtube.com/watch?v=MUTx0TiHUUI"
+    },
     {
       "id": 11,
       "categoriaId": 3,
@@ -109,14 +115,14 @@
       "id": 12,
       "categoriaId": 3,
       "titulo": "Massa de salgado folhado",
-        "url": "https://www.youtube.com/watch?v=HQybS6T591g"
-      },
+      "url": "https://www.youtube.com/watch?v=HQybS6T591g"
+    },
     {
       "id": 13,
       "categoriaId": 3,
       "titulo": "Bolinho de chuva espetacular",
       "url": "https://www.youtube.com/watch?v=aQTFVMQwIlg"
-      },
+    },
     {
       "id": 14,
       "categoriaId": 3,
@@ -138,9 +144,9 @@
     {
       "id": 17,
       "categoriaId": 4,
-        "titulo": "Pão de banana saudável",
-        "url": "https://www.youtube.com/watch?v=QR1_RfvtIII&t=250s"
-      },
+      "titulo": "Pão de banana saudável",
+      "url": "https://www.youtube.com/watch?v=QR1_RfvtIII&t=250s"
+    },
     {
       "id": 18,
       "categoriaId": 4,

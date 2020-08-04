@@ -3,6 +3,7 @@ import Template from '../../../components/Template';
 import FormField from '../../../components/FormField';
 import Loader from '../../../components/Loader';
 import { ButtonSuccess, ButtonDanger } from '../../../components/Button';
+import useForm from '../../../hooks/useForm';
 
 import {
   Title, Form, Table, ContainerWrapper, ButtonDelete, ButtonUpdate,
@@ -10,14 +11,15 @@ import {
 
 const CadastroCategoria = () => {
   const initialValues = {
-    name: '',
+    titulo: '',
     description: '',
-    color: '#20bf6b',
+    cor: '#20bf6b',
   };
+
+  const { handleChange, values, clearForm } = useForm(initialValues);
 
   // Guarda os valores da lista de categorias
   const [listCategorys, setListCategorys] = useState([]);
-  const [values, setValues] = useState(initialValues);
 
   useEffect(() => {
     // O que a gente quer que aconteça
@@ -33,20 +35,6 @@ const CadastroCategoria = () => {
       });
   }, []);
 
-  const setValue = (chave, valor) => {
-    setValues({
-      ...values,
-      [chave]: valor,
-    });
-  };
-
-  const handleChange = (event) => {
-    setValue(
-      event.target.getAttribute('name'), // nome campo
-      event.target.value, // valor digitado no input
-    );
-  };
-
   /* quando a quer que aconteça */
 
   const handleSubmit = (event) => {
@@ -59,9 +47,9 @@ const CadastroCategoria = () => {
     fetch(URL_VALUE, {
       method: 'POST',
       body: JSON.stringify({
-        name: values.name,
+        titulo: values.titulo,
         description: values.description,
-        color: values.color,
+        cor: values.cor,
       }),
       headers: {
         'content-type': 'application/json',
@@ -70,7 +58,7 @@ const CadastroCategoria = () => {
       .then(async (res) => {
         const responseFieldValues = await res.json();
         setListCategorys([...listCategorys, responseFieldValues]); // adicionando os novos valores no state
-        setValues(initialValues);
+        clearForm();
       });
   };
 
@@ -78,7 +66,7 @@ const CadastroCategoria = () => {
     const id = event.target.getAttribute('id');
 
     const URL_VALUE = window.location.hostname.includes('localhost')
-    ? 'http://localhost:8080/categorias' : 'https://rangoflix.herokuapp.com/categorias';
+      ? 'http://localhost:8080/categorias' : 'https://rangoflix.herokuapp.com/categorias';
 
     fetch(`${URL_VALUE}/${id}`, {
       method: 'DELETE',
@@ -99,8 +87,8 @@ const CadastroCategoria = () => {
           <FormField
             label="Nome"
             type="text"
-            name="name"
-            value={values.name}
+            name="titulo"
+            value={values.titulo}
             onChange={handleChange}
           />
 
@@ -113,15 +101,15 @@ const CadastroCategoria = () => {
           />
 
           <FormField
-            label={`Color: ${values.color}`}
+            label={`Color: ${values.cor}`}
             type="color"
-            name="color"
-            value={values.color}
+            name="cor"
+            value={values.cor}
             onChange={handleChange}
           />
 
           <ButtonSuccess type="submit" style={{ marginRight: '30px' }}>Cadastrar</ButtonSuccess>
-          <ButtonDanger type="button" onClick={() => setValues(initialValues)}>Limpar</ButtonDanger>
+          <ButtonDanger type="button" onClick={() => clearForm()}>Limpar</ButtonDanger>
         </Form>
 
         {listCategorys.length === 0 && (
@@ -143,8 +131,9 @@ const CadastroCategoria = () => {
                 <Table style={{ marginTop: '30px' }}>
                   <thead>
                     <tr>
+                      <th>id</th>
                       <th>Nome</th>
-                      <th>Descrição</th>
+                      <th>cor</th>
                       <th>Ações</th>
                     </tr>
                   </thead>
@@ -152,8 +141,9 @@ const CadastroCategoria = () => {
                     {listCategorys.map((category, index) => (
                       // eslint-disable-next-line react/no-array-index-key
                       <tr key={index}>
-                        <td>{category.name}</td>
-                        <td>{category.description}</td>
+                        <td>{category.id}</td>
+                        <td>{category.titulo}</td>
+                        <td>{category.cor}</td>
                         <td>
                           <ButtonUpdate type="button">
                             Editar
