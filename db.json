@@ -1,16 +1,157 @@
 {
-    "categorias": [
-        {
-            "id": 1,
-            "name": "Cozinha Árabe",
-            "description": "Comidas exoticas do mundo árabe",
-            "color": "#FF0000"
-        },
-        {
-            "id": 2,
-            "name": "Cozinha Mexicana",
-            "description": "Comidas apimentadas típicas",
-            "color": "#FF0000"
-        }
-    ]
+  "categorias": [
+    {
+      "id": 1,
+      "titulo": "Cozinha Básica",
+      "link": "https://www.youtube.com/watch?v=cMQmlrTDh_Y&list=PLpUs89aC5iYSfn0PGWLbyKrR5g-NLg3WY&index=1",
+      "cor": "#8e44ad",
+      "link_extra": {
+        "text": "Uma série de receitas para o dia a dia. :)",
+        "url": "https://www.youtube.com/watch?v=cMQmlrTDh_Y&list=PLpUs89aC5iYSfn0PGWLbyKrR5g-NLg3WY&index=1"
+      }
+    },
+    {
+      "id": 2,
+      "titulo": "Doces",
+      "cor": "#16a085",
+      "link_extra": {
+        "text": "Uma série de receitas doces para alegrar o dia. :)",
+        "url": ""
+      }
+    },
+    {
+      "id": 3,
+      "titulo": "Salgados",
+      "cor": "#f1c40f",
+      "link_extra": {
+        "text": "Uma série de receitas salgadas. :)",
+        "url": ""
+      }
+    },
+    {
+      "id": 4,
+      "titulo": "Fitness",
+      "cor": "#e67e22",
+      "link_extra": {
+        "text": "Uma série de receitas para quem fazendo aquela dieta. :)",
+        "url": ""
+      }
+    }
+  ],
+  "videos": [
+    {
+      "id": 1,
+      "categoriaId": 1,
+      "titulo": "Como fazer aquele ovo cozido maroto?",
+      "url": "https://www.youtube.com/watch?v=GD2n2JVOLMA"
+    },
+    {
+      "id": 2,
+      "categoriaId": 1,
+      "titulo": "Aprenda fazer vinagrete de um jeito fácil",
+      "url": "https://www.youtube.com/watch?v=x7njQWhBpnc&list=PLpUs89aC5iYSfn0PGWLbyKrR5g-NLg3WY&index=5"
+    },
+    {
+      "id": 3,
+      "categoriaId": 1,
+      "titulo": "Panqueca de carne marota",
+      "url": "https://www.youtube.com/watch?v=aYkIfZ0QRh4&list=PLpUs89aC5iYSfn0PGWLbyKrR5g-NLg3WY&index=7"
+    },
+    {
+      "id": 4,
+      "categoriaId": 1,
+      "titulo": "Como fazer café no filtro de papel",
+      "url": "https://www.youtube.com/watch?v=pt4iWtNIXUg"
+    },
+    {
+      "id": 5,
+      "categoriaId": 1,
+      "titulo": "Como vitamina de banana",
+      "url": "https://www.youtube.com/watch?v=w45A3LgRY4s"
+    },
+    {
+      "id": 6,
+      "categoriaId": 1,
+      "titulo": "Como fazer nuggets caseiro",
+      "url": "https://www.youtube.com/watch?v=SqfKdNjdQxo"
+    },
+    {
+      "id": 7,
+      "categoriaId": 2,
+      "titulo": "3 tipos de Brownie",
+      "url": "https://www.youtube.com/watch?v=VmY6EskdkOI"
+    },
+    {
+      "id": 8,
+      "categoriaId": 2,
+      "titulo": "Mouse de maracujá sensacional",
+      "url": "https://www.youtube.com/watch?v=TVWjXeVXdsU"
+    },
+    {
+      "id": 9,
+      "categoriaId": 2,
+        "titulo": "Bolo de cenoura incrível",
+        "url": "https://www.youtube.com/watch?v=MWxWgKJaWGg"
+      },
+    {
+      "id": 10,
+      "categoriaId": 2,
+        "titulo": "Brigadeiro de colher top",
+        "url": "https://www.youtube.com/watch?v=MUTx0TiHUUI"
+      },
+    {
+      "id": 11,
+      "categoriaId": 3,
+      "titulo": "Coxinha de frango íncrivel",
+      "url": "https://www.youtube.com/watch?v=BtV1Q1YcBx8"
+    },
+    {
+      "id": 12,
+      "categoriaId": 3,
+      "titulo": "Massa de salgado folhado",
+        "url": "https://www.youtube.com/watch?v=HQybS6T591g"
+      },
+    {
+      "id": 13,
+      "categoriaId": 3,
+      "titulo": "Bolinho de chuva espetacular",
+      "url": "https://www.youtube.com/watch?v=aQTFVMQwIlg"
+      },
+    {
+      "id": 14,
+      "categoriaId": 3,
+      "titulo": "Pão de queijo sensacional",
+      "url": "https://www.youtube.com/watch?v=HxBGw5TnWrI"
+    },
+    {
+      "id": 15,
+      "categoriaId": 4,
+      "titulo": "Tapioca marota",
+      "url": "https://www.youtube.com/watch?v=qwAeslZohO8"
+    },
+    {
+      "id": 16,
+      "categoriaId": 4,
+      "titulo": "Café da manhã rápido e saudável",
+      "url": "https://www.youtube.com/watch?v=ttP1dHrzc20"
+    },
+    {
+      "id": 17,
+      "categoriaId": 4,
+        "titulo": "Pão de banana saudável",
+        "url": "https://www.youtube.com/watch?v=QR1_RfvtIII&t=250s"
+      },
+    {
+      "id": 18,
+      "categoriaId": 4,
+      "titulo": "Chips de batata doce saudável",
+      "url": "https://www.youtube.com/watch?v=7-hS8HBQDnw"
+    },
+    {
+      "id": 19,
+      "categoriaId": 4,
+      "titulo": "Frango fit sensacional",
+      "url": "https://www.youtube.com/watch?v=KVttn7snYsM"
+    }
+  ]
 }
