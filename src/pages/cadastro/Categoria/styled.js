@@ -36,7 +36,7 @@ export const ScrollTable = styled.div`
 ` 
 
 export const Table = styled.table`
-    width: 50%;
+    width: 60%;
     max-width: 100%;
     font-size: 14px;
     border-collapse: separate;
@@ -81,13 +81,13 @@ export const Table = styled.table`
     }
 `
 
-export const ButtonDelete = styled(Trash)`
+export const IconDelete = styled(Trash)`
     color: #E5E5E5;
     width: 24px;
     cursor: pointer;
 `
 
-export const ButtonUpdate = styled(Edit)`
+export const IconUpdate = styled(Edit)`
     color: #E5E5E5;
     width: 24px;
     margin-right: 10px;

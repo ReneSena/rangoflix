@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import Template from '../../../components/Template';
 import FormField from '../../../components/FormField';
 import Loader from '../../../components/Loader';
-import { ButtonSuccess, ButtonDanger } from '../../../components/Button';
+import { ButtonSuccess, ButtonDanger, ButtonIcon } from '../../../components/Button';
 import useForm from '../../../hooks/useForm';
 
 import {
-  Title, Form, Table, ContainerWrapper, ButtonDelete, ButtonUpdate,
+  Title, Form, Table, ContainerWrapper, IconDelete, IconUpdate 
 } from './styled';
 
 const CadastroCategoria = () => {
+  const history = useHistory();
   const initialValues = {
     titulo: '',
     description: '',
@@ -73,7 +75,7 @@ const CadastroCategoria = () => {
     })
       .then((response) => response.json())
       .then((responseServer) => {
-        console.log(responseServer);
+          history.push('/cadastro/categoria');
       });
   };
 
@@ -131,27 +133,27 @@ const CadastroCategoria = () => {
                 <Table style={{ marginTop: '30px' }}>
                   <thead>
                     <tr>
-                      <th>id</th>
                       <th>Nome</th>
-                      <th>cor</th>
-                      <th>Ações</th>
+                      <th>Descrição</th>
+                      {/* <th>Ações</th> */}
                     </tr>
                   </thead>
                   <tbody>
                     {listCategorys.map((category, index) => (
                       // eslint-disable-next-line react/no-array-index-key
                       <tr key={index}>
-                        <td>{category.id}</td>
                         <td>{category.titulo}</td>
-                        <td>{category.cor}</td>
-                        <td>
-                          <ButtonUpdate type="button">
-                            Editar
-                          </ButtonUpdate>
-                          <ButtonDelete as="button" id={category.id} onClick={(event) => handleDelete(event)} type="button">
-                            Excluir
-                          </ButtonDelete>
-                        </td>
+                        <td>{category.description}</td>
+                        {/* <td style={{ display: 'flex' }}>
+                          <ButtonIcon type="button">
+                            <IconUpdate />  
+                          </ButtonIcon>
+
+                          <ButtonIcon id={category.id} onClick={(event) => handleDelete(event)} type="button">  
+                            <IconDelete />
+                          </ButtonIcon>
+                      
+                        </td> */}
                       </tr>
                     ))}
                   </tbody>

@@ -45,3 +45,13 @@ export const ButtonDanger = styled(Button)`
         opacity: 1;
     }
 `;
+
+export const ButtonIcon = styled(Button)`
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        opacity: .8;
+    }
+`
