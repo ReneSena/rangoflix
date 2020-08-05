@@ -1,6 +1,6 @@
-<figure align="center">
+<div align="center">
   <img src="src/assets/Img/Logo.png">
-</figure>
+</div>
 
 ## **Objetivo da aplicação**
  
@@ -17,9 +17,10 @@
 * ***[Eslint](https://eslint.org/)***
 * ***[Prettier](https://prettier.io/)***
 * ***[Json Server](https://github.com/typicode/json-server)***
+* ***[Concurrently](https://www.npmjs.com/package/concurrently)***
 * ***[Yarn](https://classic.yarnpkg.com/en/docs/install#debian-stable)***
 
-## Pendências de implematação
+<!-- ## Pendências de implematação
 
 - [x] Exclusão de categorias
 - [ ] Alteração de Categorias
@@ -27,7 +28,7 @@
 - [ ] Ajustes no layout (paleta de cores e organização dos elementos)
 - [ ] Ajustar responsividade
 - [ ] Criar menu lateral para o mobile
-- [ ] Adicionar select de categorias no cadastro de vídeo
+- [ ] Adicionar select de categorias no cadastro de vídeo -->
 
 ## Instalação
 
