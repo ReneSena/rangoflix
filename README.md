@@ -1,4 +1,10 @@
-<center>![Logo da Aplicação RangoFlix](/src/assets/Img/Logo.png)</center>
+<code>
+    <center>
+        <img src="src/assets/Img/Logo.png" />
+    </center>
+<code>
+
+---
 
 ## **Objetivo da aplicação**
  
