@@ -1,10 +1,6 @@
-<code>
-    <center>
-        <img src="src/assets/Img/Logo.png" />
-    </center>
-<code>
-
----
+<figure align="center">
+  <img src="src/assets/Img/Logo.png">
+</figure>
 
 ## **Objetivo da aplicação**
  
