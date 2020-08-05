@@ -1,21 +1,21 @@
-![Logo da Aplicação RangoFlix](/src/assets/Img/Logo.png)
+<center>![Logo da Aplicação RangoFlix](/src/assets/Img/Logo.png)</center>
 
-> ## **Objetivo da aplicação**
-> 
-> Esse projeto foi desenvolvido durante a *Imersão React comandado pela empresa Alura Cursos Online*, onde o intuito era criar uma aplicação baseada na Netflix, porém levando em consideração nossos gostos pessoais para gerar nossas próprias playlist de conteúdos favoritas.
-> 
-> Criei então, o **RangoFlix**. O intuito dessa playlist é instigar você a arte da cozinha, e botar a mão na massa para fazer o que você gosta de uma maneira fácil, aqui você encontrar diversas receitas desde doces à receitas low carbs. 
+## **Objetivo da aplicação**
+ 
+> <p>Esse projeto foi desenvolvido durante a *Imersão React comandado pela empresa Alura Cursos Online*, onde o intuito era criar uma aplicação baseada na Netflix, porém levando em consideração nossos gostos pessoais para gerar nossas próprias playlist de conteúdos favoritas.</p>
+
+<p>Criei então, o **RangoFlix**. O intuito dessa playlist é instigar você á arte da cozinha, e botar a mão na massa para fazer o que você gosta de uma maneira fácil. Aqui você encontrar diversas receitas desde doces à receitas low carbs.</p> 
 
 ## Tecnologias utilizadas 
 
-* ***ReactJS***
-* ***Reack Slick***
-* ***Styled Components***
-* ***Styled Icons***
-* ***Eslint***
-* ***Prettier***
-* ***Json Server***
-* ***Yarn***
+* ***[ReactJS](https://pt-br.reactjs.org/)*** 
+* ***[Reack Slick](https://react-slick.neostack.com/)***
+* ***[Styled Components](https://styled-components.com/)***
+* ***[Styled Icons](https://styled-icons.js.org/)***
+* ***[Eslint](https://eslint.org/)***
+* ***[Prettier](https://prettier.io/)***
+* ***[Json Server](https://github.com/typicode/json-server)***
+* ***[Yarn](https://classic.yarnpkg.com/en/docs/install#debian-stable)***
 
 ## Pendências de implematação
 
@@ -26,3 +26,25 @@
 - [ ] Ajustar responsividade
 - [ ] Criar menu lateral para o mobile
 - [ ] Adicionar select de categorias no cadastro de vídeo
+
+## Instalação
+
+```
+git clone git@github.com:ReneSena/rangoflix.git
+
+cd rangoflix
+
+yarn install
+```
+
+## Executar projeto em desenvolvimento
+
+```
+yarn run dev
+```
+
+## Gerar versão de produção
+
+```
+yarn build
+```
