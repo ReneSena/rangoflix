@@ -4,9 +4,9 @@
 
 ## **Objetivo da aplicação**
  
-> <p>Esse projeto foi desenvolvido durante a *Imersão React comandado pela empresa Alura Cursos Online*, onde o intuito era criar uma aplicação baseada na Netflix, porém levando em consideração nossos gostos pessoais para gerar nossas próprias playlist de conteúdos favoritas.</p>
+> <p>Esse projeto foi desenvolvido durante a <em>Imersão React comandado pela empresa Alura Cursos Online</em>, onde o intuito era criar uma aplicação baseada na Netflix, porém levando em consideração nossos gostos pessoais para gerar nossas próprias playlist de conteúdos favoritas.</p>
 
-<p>Criei então, o **RangoFlix**. O intuito dessa playlist é instigar você á arte da cozinha, e botar a mão na massa para fazer o que você gosta de uma maneira fácil. Aqui você encontrar diversas receitas desde doces à receitas low carbs.</p> 
+<p>Criei então, o <strong>RangoFlix</strong>. O intuito dessa playlist é instigar você á arte da cozinha, e botar a mão na massa para fazer o que você gosta de uma maneira fácil. Aqui você encontrar diversas receitas desde doces à receitas low carbs.</p> 
 
 ## Tecnologias utilizadas 
 
@@ -32,7 +32,7 @@
 
 ## Instalação
 
-```
+```bash
 git clone git@github.com:ReneSena/rangoflix.git
 
 cd rangoflix
@@ -42,12 +42,12 @@ yarn install
 
 ## Executar projeto em desenvolvimento
 
-```
+```bash
 yarn run dev
 ```
 
 ## Gerar versão de produção
 
-```
+```bash
 yarn build
 ```
