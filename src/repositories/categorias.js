@@ -12,7 +12,6 @@ const getAll = () => {
       
       throw new Error('Não possível acessar o servidor. ;(')
     })
-
 };
 
 const getAllWithVideos = () => {

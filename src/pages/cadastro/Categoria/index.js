@@ -59,7 +59,7 @@ const CadastroCategoria = () => {
     })
       .then((response) => response.json())
       .then(responseServer => {
-        setListCategorys(prev => prev.filter(cat => cat.id !== Number(id)));
+        setListCategorys(listCategorys => listCategorys.filter(category => category.id !== Number(id)));
       });
   };
 
