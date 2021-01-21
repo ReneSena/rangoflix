@@ -14,7 +14,7 @@ import { Title, Form, Table, ContainerWrapper } from "./styled";
 
 const CadastroCategoria = () => {
 	const history = useHistory();
-	const location = useLocation();
+	const { pathname } = useLocation();
 
 	const initialValues = {
 		titulo: "",
@@ -141,19 +141,21 @@ const CadastroCategoria = () => {
 						onChange={handleChange}
 					/>
 
-					<ButtonSuccess
-						type="submit"
-						style={{ marginRight: "30px" }}
-					>
-						Cadastrar
-					</ButtonSuccess>
-
-					<ButtonSuccess
-						type="button"
-						style={{ marginRight: "30px" }}
-					>
-						Editar
-					</ButtonSuccess>
+					{!pathname.includes("/categoria/editar") ? (
+						<ButtonSuccess
+							type="submit"
+							style={{ marginRight: "30px" }}
+						>
+							Cadastrar
+						</ButtonSuccess>
+					) : (
+						<ButtonSuccess
+							type="button"
+							style={{ marginRight: "30px" }}
+						>
+							Editar
+						</ButtonSuccess>
+					)}
 
 					<ButtonDanger type="button" onClick={() => clearForm()}>
 						Limpar
@@ -183,51 +185,52 @@ const CadastroCategoria = () => {
 					</div>
 				)}
 
-				{listCategorys.length > 0 && (
-					<Table style={{ marginTop: "30px" }}>
-						<thead>
-							<tr>
-								<th>Nome</th>
-								<th>Descrição</th>
-								{/* <th>Ações</th> */}
-							</tr>
-						</thead>
-						<tbody>
-							{listCategorys.map((category, index) => (
-								// eslint-disable-next-line react/no-array-index-key
-								<tr key={index}>
-									<td>{category.titulo}</td>
-									<td>{category.description}</td>
-									<td style={{ display: "flex" }}>
-										{/* <ButtonIcon type="button">
+				{listCategorys.length > 0 &&
+					!pathname.includes("/categoria/editar") && (
+						<Table style={{ marginTop: "30px" }}>
+							<thead>
+								<tr>
+									<th>Nome</th>
+									<th>Descrição</th>
+									{/* <th>Ações</th> */}
+								</tr>
+							</thead>
+							<tbody>
+								{listCategorys.map((category, index) => (
+									// eslint-disable-next-line react/no-array-index-key
+									<tr key={index}>
+										<td>{category.titulo}</td>
+										<td>{category.description}</td>
+										<td style={{ display: "flex" }}>
+											{/* <ButtonIcon type="button">
                             <IconUpdate />
                           </ButtonIcon> */}
 
-										<ButtonIcon
-											id={category.id}
-											onClick={(event) =>
-												handleDelete(event)
-											}
-											type="button"
-										>
-											Excluir
-										</ButtonIcon>
+											<ButtonIcon
+												id={category.id}
+												onClick={(event) =>
+													handleDelete(event)
+												}
+												type="button"
+											>
+												Excluir
+											</ButtonIcon>
 
-										<ButtonIcon
-											id={category.id}
-											onClick={(event) =>
-												handleEditar(event)
-											}
-											type="button"
-										>
-											Editar
-										</ButtonIcon>
-									</td>
-								</tr>
-							))}
-						</tbody>
-					</Table>
-				)}
+											<ButtonIcon
+												id={category.id}
+												onClick={(event) =>
+													handleEditar(event)
+												}
+												type="button"
+											>
+												Editar
+											</ButtonIcon>
+										</td>
+									</tr>
+								))}
+							</tbody>
+						</Table>
+					)}
 			</ContainerWrapper>
 		</Template>
 	);
