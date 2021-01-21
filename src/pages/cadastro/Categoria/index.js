@@ -15,6 +15,7 @@ import { Title, Form, Table, ContainerWrapper } from "./styled";
 const CadastroCategoria = () => {
 	const history = useHistory();
 	const { pathname } = useLocation();
+	const [editId, setEditId] = useState();
 
 	const initialValues = {
 		titulo: "",
@@ -76,8 +77,9 @@ const CadastroCategoria = () => {
 			});
 	};
 
-	const handleEditar = (event) => {
+	const handleGetDataEditar = (event) => {
 		const id = event.target.getAttribute("id");
+		setEditId(id);
 
 		const URL_VALUE = window.location.hostname.includes("localhost")
 			? "http://localhost:8080/categorias"
@@ -98,6 +100,33 @@ const CadastroCategoria = () => {
 			});
 	};
 
+	const handleEditar = (event) => {
+		event.preventDefault();
+
+		const URL_VALUE = window.location.hostname.includes("localhost")
+			? "http://localhost:8080/categorias"
+			: "https://rangoflix.herokuapp.com/categorias";
+
+		// Valores do campos do form
+		fetch(`${URL_VALUE}/${editId}`, {
+			method: "PATCH",
+			body: JSON.stringify({
+				titulo: values.titulo,
+				description: values.description,
+				cor: values.cor,
+			}),
+			headers: {
+				"content-type": "application/json",
+			},
+		}).then(async (res) => {
+			const responseFieldValues = await res.json();
+			setListCategorys([...listCategorys, responseFieldValues]); // adicionando os novos valores no state
+			clearForm();
+
+			history.push("cadastro/categoria");
+		});
+	};
+
 	useEffect(() => {
 		// O que a gente quer que aconteça
 		const URL_VALUE = window.location.hostname.includes("localhost")
@@ -114,7 +143,14 @@ const CadastroCategoria = () => {
 	return (
 		<Template styled={{ textAlign: "center" }}>
 			<ContainerWrapper>
-				<Form onSubmit={handleSubmit} autoComplete="off">
+				<Form
+					onSubmit={
+						!pathname.includes("/categoria/editar")
+							? handleSubmit
+							: handleEditar
+					}
+					autoComplete="off"
+				>
 					<Title as="legend">Nova Categoria</Title>
 
 					<FormField
@@ -150,7 +186,7 @@ const CadastroCategoria = () => {
 						</ButtonSuccess>
 					) : (
 						<ButtonSuccess
-							type="button"
+							type="submit"
 							style={{ marginRight: "30px" }}
 						>
 							Editar
@@ -219,7 +255,7 @@ const CadastroCategoria = () => {
 											<ButtonIcon
 												id={category.id}
 												onClick={(event) =>
-													handleEditar(event)
+													handleGetDataEditar(event)
 												}
 												type="button"
 											>
