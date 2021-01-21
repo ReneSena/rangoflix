@@ -14,13 +14,14 @@
     "react-scripts": "3.4.1",
     "react-slick": "^0.27.1",
     "styled-components": "^5.1.1",
-    "styled-icons": "^10.13.0"
+    "styled-icons": "^10.13.0",
+    "yarn": "^1.22.10"
   },
   "scripts": {
     "server": "node ./server.js",
-    "dev": "concurrently \"react-scripts start\" \"yarn run server\"", 
+    "dev": "concurrently \"react-scripts start\" \"yarn run server\"",
     "start": "yarn run server",
-    "build": "react-scripts build", 
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -40,13 +41,15 @@
     ]
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "concurrently": "^5.2.0",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.5",
     "eslint-plugin-react-hooks": "^4.0.8",
-    "prettier": "2.0.5"
+    "prettier": "^2.2.1"
   }
 }
