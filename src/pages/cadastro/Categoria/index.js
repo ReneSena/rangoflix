@@ -10,7 +10,7 @@ import {
 } from "../../../components/Button";
 import useForm from "../../../hooks/useForm";
 
-import { Title, Form, Table, ContainerWrapper } from "./styled";
+import { Title, Form, Table, ContainerWrapper, Actions } from "./styled";
 
 const CadastroCategoria = () => {
 	const history = useHistory();
@@ -177,25 +177,27 @@ const CadastroCategoria = () => {
 						onChange={handleChange}
 					/>
 
-					{!pathname.includes("/categoria/editar") ? (
-						<ButtonSuccess
-							type="submit"
-							style={{ marginRight: "30px" }}
-						>
-							Cadastrar
-						</ButtonSuccess>
-					) : (
-						<ButtonSuccess
-							type="submit"
-							style={{ marginRight: "30px" }}
-						>
-							Editar
-						</ButtonSuccess>
-					)}
+					<Actions>
+						{!pathname.includes("/categoria/editar") ? (
+							<ButtonSuccess
+								type="submit"
+								style={{ marginRight: "30px" }}
+							>
+								Cadastrar
+							</ButtonSuccess>
+						) : (
+							<ButtonSuccess
+								type="submit"
+								style={{ marginRight: "30px" }}
+							>
+								Editar
+							</ButtonSuccess>
+						)}
 
-					<ButtonDanger type="button" onClick={() => clearForm()}>
-						Limpar
-					</ButtonDanger>
+						<ButtonDanger type="button" onClick={() => clearForm()}>
+							Limpar
+						</ButtonDanger>
+					</Actions>
 				</Form>
 
 				{listCategorys.length === 0 && (
