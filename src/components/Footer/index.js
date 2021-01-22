@@ -5,15 +5,14 @@ import { FooterBase } from "./styled";
 import Logo from "../../assets/Img/Logo.png";
 
 function Footer() {
+	const data = new Date();
+
 	return (
 		<FooterBase>
 			<Link to="/">
-				<img src={Logo} width="150" alt="Logo do RangoFlix" />
+				<img src={Logo} width="100" alt="Logo do RangoFlix" />
 			</Link>
-			<p>
-				Site feito na{" "}
-				<a href="https://www.alura.com.br/">Imersão React da Alura</a>
-			</p>
+			<p>Feito com React ♥ 2020 - {data.getFullYear()}</p>
 		</FooterBase>
 	);
 }
