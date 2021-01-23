@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const VideoCardContainer = styled.a`
 	text-decoration: none;
@@ -15,7 +15,7 @@ export const VideoCardContainer = styled.a`
 	position: relative;
 	display: flex;
 	align-items: flex-end;
-	transition: all .3s;
+	transition: all 0.3s;
 
 	@media (max-width: 800px) {
 		width: 200px;
@@ -25,7 +25,6 @@ export const VideoCardContainer = styled.a`
 	&:hover,
 	&:focus {
 		transform: scale(0.98);
-		box-shadow: 0 0 0 1px var(--white);
 		outline: none;
 	}
 
@@ -34,7 +33,7 @@ export const VideoCardContainer = styled.a`
 	}
 
 	.description {
-		background: rgba(0, 0, 0, .8);
+		background: rgba(0, 0, 0, 0.8);
 		width: 100%;
 		height: 60px;
 		color: var(--white);
