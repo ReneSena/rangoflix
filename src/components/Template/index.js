@@ -7,6 +7,7 @@ import { Main } from "./styled";
 
 const Template = ({ children }) => {
 	const { pathname } = useLocation();
+
 	return (
 		<>
 			<Menu />
