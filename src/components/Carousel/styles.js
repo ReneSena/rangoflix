@@ -33,7 +33,7 @@ export const VideoCardList = styled.ul`
 export const VideoCardGroupContainer = styled.section`
 	color: var(--white);
 	min-height: 197px;
-	padding: 30px 40px;
+	padding: 20px 40px;
 	background-color: #171717;
 
 	@media (max-width: 800px) {

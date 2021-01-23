@@ -21,7 +21,7 @@ export const GlobalStyle = createGlobalStyle`
         font: inherit;
         vertical-align: baseline;
     }
-    /* HTML5 display-role reset for older browsers */
+
     article, aside, details, figcaption, figure,
     footer, header, hgroup, menu, nav, section {
         display: block;
