@@ -12,6 +12,10 @@ export const ListItem = styled.li`
 export const ListLink = styled(Link)`
 	color: var(--white);
 	font-size: 16px;
-	font-weight: 600;
+	font-weight: 400;
 	text-decoration: none;
+
+	&.active {
+		font-weight: 600;
+	}
 `;
