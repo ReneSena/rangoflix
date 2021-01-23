@@ -1,6 +1,6 @@
 import React from "react";
 
-import { LoaderWrapper, LoaderFoodWrapper, Container } from "./styled";
+import { LoaderWrapper, Container } from "./styled";
 
 import loadIcon from "../../assets/Img/restaurant.svg";
 

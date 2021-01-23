@@ -9,7 +9,6 @@ const Home = () => {
 	const [dadosIniciais, setDadosIniciais] = useState([]);
 
 	useEffect(() => {
-		// O que a gente quer que aconteça
 		categoriasRepository
 			.getAllWithVideos()
 			.then((categoriasComVideos) => {
