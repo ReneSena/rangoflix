@@ -1,9 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import { LoaderWrapper } from './styled';
+import { LoaderWrapper, LoaderFoodWrapper, Container } from "./styled";
+
+import loadIcon from "../../assets/Img/restaurant.svg";
 
 const Loader = () => (
-    <LoaderWrapper className="loading loading-animation" />
-)
+	<Container>
+		<LoaderWrapper src={loadIcon} />
+	</Container>
+);
 
 export default Loader;
