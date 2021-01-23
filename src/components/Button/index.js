@@ -54,6 +54,7 @@ export const ButtonIcon = styled(Button)`
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
+	padding: 0;
 	z-index: 10;
 
 	&:hover {

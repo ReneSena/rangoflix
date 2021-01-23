@@ -1,7 +1,4 @@
 import styled from "styled-components";
-import { Trash } from "@styled-icons/boxicons-solid/Trash";
-import { Edit } from "@styled-icons/evaicons-solid/Edit";
-import { ButtonSuccess } from "../../../components/Button";
 
 export const ContainerWrapper = styled.div`
 	margin-top: 60px;
@@ -61,7 +58,8 @@ export const Table = styled.table`
 	}
 
 	th {
-		font-weight: 600;
+		color: #222;
+		font-weight: 700;
 	}
 
 	th,
@@ -73,13 +71,26 @@ export const Table = styled.table`
 
 	tr:not(:first-of-type),
 	td {
-		color: #e5e5e5;
-		background-color: #53585d;
-		border-bottom: 1px solid var(--white);
+		color: #222;
+		background-color: #fff;
+		border-top: 1px solid #c1c1c1;
+		border-bottom: 1px solid #c1c1c1;
+
+		&:first-child {
+			border-left: 1px solid #c1c1c1;
+			border-top: 1px solid #c1c1c1;
+			border-bottom: 1px solid #c1c1c1;
+		}
+
+		&:last-child {
+			border-right: 1px solid #c1c1c1;
+			border-top: 1px solid #c1c1c1;
+			border-bottom: 1px solid #c1c1c1;
+		}
 	}
 
 	tr:hover td {
-		background-color: #484d51;
+		background-color: #f5f5f5;
 	}
 
 	tr td:first-child {
@@ -92,18 +103,3 @@ export const Table = styled.table`
 		border-bottom-right-radius: 5px;
 	}
 `;
-
-// export const IconDelete = styled(Trash)`
-//     color: #E5E5E5;
-//     width: 24px;
-//     cursor: pointer;
-//     z-index: 1;
-// `;
-
-// export const IconUpdate = styled(Edit)`
-//     color: #E5E5E5;
-//     width: 24px;
-//     margin-right: 10px;
-//     cursor: pointer;
-//     z-index: 1;
-// `;

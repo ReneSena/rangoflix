@@ -3,6 +3,8 @@ import { useHistory, useLocation } from "react-router-dom";
 import Template from "../../../components/Template";
 import FormField from "../../../components/FormField";
 import URL_BASE from "../../../config/index.js";
+import { Trash } from "@styled-icons/boxicons-solid/Trash";
+import { Edit } from "@styled-icons/evaicons-solid/Edit";
 
 import {
 	ButtonSuccess,
@@ -194,6 +196,7 @@ const CadastroCategoria = () => {
 								<tr>
 									<th>Nome</th>
 									<th>Descrição</th>
+									<th>Ações</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -205,21 +208,26 @@ const CadastroCategoria = () => {
 											<ButtonIcon
 												id={category.id}
 												onClick={(event) =>
-													handleDelete(event)
-												}
-												type="button"
-											>
-												Excluir
-											</ButtonIcon>
-
-											<ButtonIcon
-												id={category.id}
-												onClick={(event) =>
 													handleGetDataEditar(event)
 												}
 												type="button"
 											>
-												Editar
+												<Edit
+													size="24"
+													color="#2a7ae4"
+												/>
+											</ButtonIcon>
+											<ButtonIcon
+												id={category.id}
+												onClick={(event) =>
+													handleDelete(event)
+												}
+												type="button"
+											>
+												<Trash
+													size="24"
+													color="#ea1d2c"
+												/>
 											</ButtonIcon>
 										</td>
 									</tr>
