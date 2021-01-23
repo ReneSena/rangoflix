@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import Template from "../../../components/Template";
 import FormField from "../../../components/FormField";
-import Loader from "../../../components/Loader";
+import URL_BASE from "../../../config/index.js";
+
 import {
 	ButtonSuccess,
 	ButtonDanger,
@@ -35,12 +36,7 @@ const CadastroCategoria = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 
-		const URL_VALUE = window.location.hostname.includes("localhost")
-			? "http://localhost:8080/categorias"
-			: "https://rangoflix.herokuapp.com/categorias";
-
-		// Valores do campos do form
-		fetch(URL_VALUE, {
+		fetch(`${URL_BASE}${"/categorias"}`, {
 			method: "POST",
 			body: JSON.stringify({
 				titulo: values.titulo,
@@ -60,11 +56,7 @@ const CadastroCategoria = () => {
 	const handleDelete = (event) => {
 		const id = event.target.getAttribute("id");
 
-		const URL_VALUE = window.location.hostname.includes("localhost")
-			? "http://localhost:8080/categorias"
-			: "https://rangoflix.herokuapp.com/categorias";
-
-		fetch(`${URL_VALUE}/${id}`, {
+		fetch(`${URL_BASE}${"/categorias"}/${id}`, {
 			method: "DELETE",
 		})
 			.then((response) => response.json())
@@ -81,11 +73,7 @@ const CadastroCategoria = () => {
 		const id = event.target.getAttribute("id");
 		setEditId(id);
 
-		const URL_VALUE = window.location.hostname.includes("localhost")
-			? "http://localhost:8080/categorias"
-			: "https://rangoflix.herokuapp.com/categorias";
-
-		fetch(`${URL_VALUE}/${id}`, {
+		fetch(`${URL_BASE}${"/categorias"}/${id}`, {
 			method: "GET",
 		})
 			.then((response) => response.json())
@@ -128,12 +116,7 @@ const CadastroCategoria = () => {
 	};
 
 	useEffect(() => {
-		// O que a gente quer que aconteça
-		const URL_VALUE = window.location.hostname.includes("localhost")
-			? "http://localhost:8080/categorias"
-			: "https://rangoflix.herokuapp.com/categorias";
-
-		fetch(URL_VALUE).then(async (res) => {
+		fetch(`${URL_BASE}${"/categorias"}`).then(async (res) => {
 			const responseReq = await res.json();
 
 			setListCategorys([...responseReq]);
@@ -201,26 +184,7 @@ const CadastroCategoria = () => {
 				</Form>
 
 				{listCategorys.length === 0 && (
-					<div
-						style={{
-							display: "flex",
-							alignItems: "center",
-							justifyContent: "center",
-							flexDirection: "column",
-							margin: "40px 0",
-						}}
-					>
-						<Loader />
-						<div
-							style={{
-								fontSize: "12px",
-								color: "#fff",
-								marginTop: "10px",
-							}}
-						>
-							Aguarde, carregando categorias...
-						</div>
-					</div>
+					<div>Aguarde, carregando categorias...</div>
 				)}
 
 				{listCategorys.length > 0 &&
@@ -230,20 +194,14 @@ const CadastroCategoria = () => {
 								<tr>
 									<th>Nome</th>
 									<th>Descrição</th>
-									{/* <th>Ações</th> */}
 								</tr>
 							</thead>
 							<tbody>
 								{listCategorys.map((category, index) => (
-									// eslint-disable-next-line react/no-array-index-key
 									<tr key={index}>
 										<td>{category.titulo}</td>
 										<td>{category.description}</td>
 										<td style={{ display: "flex" }}>
-											{/* <ButtonIcon type="button">
-                            <IconUpdate />
-                          </ButtonIcon> */}
-
 											<ButtonIcon
 												id={category.id}
 												onClick={(event) =>
