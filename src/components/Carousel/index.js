@@ -11,10 +11,10 @@ function VideoCardGroup({ ignoreFirstVideo, category }) {
 	const videos = category.videos;
 
 	return (
-		<VideoCardGroupContainer background={categoryColor}>
+		<VideoCardGroupContainer>
 			{categoryTitle && (
 				<>
-					<Title>{categoryTitle}</Title>
+					<Title background={categoryColor}>{categoryTitle}</Title>
 				</>
 			)}
 			<SliderWrapper>
@@ -28,7 +28,6 @@ function VideoCardGroup({ ignoreFirstVideo, category }) {
 							<VideoCard
 								videoTitle={video.titulo}
 								videoURL={video.url}
-								categoryColor={categoryColor}
 							/>
 						</SliderItem>
 					);

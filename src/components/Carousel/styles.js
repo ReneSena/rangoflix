@@ -9,6 +9,18 @@ export const Title = styled.h3`
 	padding-bottom: 20px;
 	line-height: 1;
 	border-radius: 4px;
+	display: flex;
+	align-items: center;
+
+	&:before {
+		content: "";
+		display: block;
+		width: 20px;
+		height: 20px;
+		background-color: ${(props) => props.background};
+		border-radius: 50px;
+		margin-right: 10px;
+	}
 
 	@media (max-width: 800px) {
 		font-size: 24px;
