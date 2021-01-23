@@ -8,7 +8,7 @@ const SliderWrapper = ({ children }) => {
 		dots: false,
 		arrows: true,
 		infinite: true,
-		speed: 1000,
+		speed: 200,
 		centerMode: false,
 		variableWidth: true,
 		nextArrow: <ArrowRight />,
