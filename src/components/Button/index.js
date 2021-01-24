@@ -57,6 +57,10 @@ export const ButtonIcon = styled(Button)`
 	padding: 0;
 	z-index: 10;
 
+	svg {
+		pointer-events: none;
+	}
+
 	&:hover {
 		opacity: 0.8;
 	}
