@@ -3,8 +3,8 @@ import { useHistory, useLocation } from "react-router-dom";
 import Template from "../../../components/Template";
 import FormField from "../../../components/FormField";
 import URL_BASE from "../../../config/index.js";
-import { Trash } from "@styled-icons/boxicons-solid/Trash";
-import { Edit } from "@styled-icons/evaicons-solid/Edit";
+import { Trash2 as Trash } from "@styled-icons/feather/Trash2";
+import { Edit } from "@styled-icons/feather/Edit";
 
 import {
 	ButtonSuccess,
@@ -30,10 +30,7 @@ const CadastroCategoria = () => {
 		initialValues
 	);
 
-	// Guarda os valores da lista de categorias
 	const [listCategorys, setListCategorys] = useState([]);
-
-	/* quando a quer que aconteça */
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
@@ -86,19 +83,14 @@ const CadastroCategoria = () => {
 					cor: responseServer.cor,
 				});
 
-				history.push("/cadastro/categoria/editar");
+				history.push("categoria/editar");
 			});
 	};
 
 	const handleEditar = (event) => {
 		event.preventDefault();
 
-		const URL_VALUE = window.location.hostname.includes("localhost")
-			? "http://localhost:8080/categorias"
-			: "https://rangoflix.herokuapp.com/categorias";
-
-		// Valores do campos do form
-		fetch(`${URL_VALUE}/${editId}`, {
+		fetch(`${URL_BASE}${"/categorias"}/${editId}`, {
 			method: "PATCH",
 			body: JSON.stringify({
 				titulo: values.titulo,
@@ -110,10 +102,17 @@ const CadastroCategoria = () => {
 			},
 		}).then(async (res) => {
 			const responseFieldValues = await res.json();
-			setListCategorys([...listCategorys, responseFieldValues]); // adicionando os novos valores no state
-			clearForm();
 
-			history.push("cadastro/categoria");
+			setListCategorys(() =>
+				listCategorys.map((cat) =>
+					cat.id === responseFieldValues.id
+						? (cat = responseFieldValues)
+						: cat
+				)
+			);
+
+			clearForm();
+			history.goBack("categoria");
 		});
 	};
 
@@ -130,13 +129,17 @@ const CadastroCategoria = () => {
 			<ContainerWrapper>
 				<Form
 					onSubmit={
-						!pathname.includes("/categoria/editar")
+						!pathname.includes("cadastro/categoria/editar")
 							? handleSubmit
 							: handleEditar
 					}
 					autoComplete="off"
 				>
-					<Title as="legend">Nova Categoria</Title>
+					<Title as="legend">
+						{pathname.includes("cadastro/categoria/editar")
+							? "Editar Categoria"
+							: "Nova Categoria"}
+					</Title>
 
 					<FormField
 						label="Nome"
@@ -163,7 +166,7 @@ const CadastroCategoria = () => {
 					/>
 
 					<Actions>
-						{!pathname.includes("/categoria/editar") ? (
+						{!pathname.includes("cadastro/categoria/editar") ? (
 							<ButtonSuccess
 								type="submit"
 								style={{ marginRight: "30px" }}
@@ -190,7 +193,7 @@ const CadastroCategoria = () => {
 				)}
 
 				{listCategorys.length > 0 &&
-					!pathname.includes("/categoria/editar") && (
+					!pathname.includes("cadastro/categoria/editar") && (
 						<Table style={{ marginTop: "30px" }}>
 							<thead>
 								<tr>
